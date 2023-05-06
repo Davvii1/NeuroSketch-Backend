@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "neurosketch",
+  "private_key_id": "41255c6dc38e44b7220b8cf7a40b1ae6d2ee8d4c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCn6gcLI+W/IU1H\nDuzgWE97z64y1BSZBtVCvA0WmTqBsjrCeA56vFB44vmeE7u7Eqy5EeHm8sYsXxUt\nRG3CxzODpolJr7H4abrASTx0sBHODpRYvD0ntd7f09hzyAl0KweFkHtHShaRD2Xk\nJf6VLvPf095TOJnnoSCYPgkBm7U2eOdC84OiJ2oKL6oROWKCdBldHXUWVliFjGa3\nbAzIy2atQOdCzr7QBxmKtq/3JuOrfNWUfX40FhvdcUVehfyZ54x8iAv3BsN1aCqQ\nYuhVxkHxaY7lgxFOitHJNVejHmc/VL/ALrX1eiy80ivajHsCzagCFWrnLRdqCc0J\nh9z+NTIZAgMBAAECggEAFm8aCc79/w8/9+Jym3axB+WzbG8RYXCcRZJCXWaTfoiF\neT35EUTfq4cHuqsARfo0wXU2LVj6SSta9PVThNaAd3JknUewC3R00wP149EyT8l6\n4HAl64xM/rKbFL0BJlgpZRrsnZW0diUMg/LflKb1Rk5UQeIqDdxlMnH3WhOnnmNJ\ncy0/rU0IMYWgiQ/8TwGxP83O3msQaCIQr5/XtxUUZ2T7o3SRmLHWINTnvVpRsHEH\nLnGrsGSXNIPSFyW+JcAVmpGW/4TKSbJIaU2J5eCXqQkK/QnksZGXJO1YcwbVQtfo\nUtxb4Zq+MH4AaDBfO5AyMyU1LfsPnw0Gy1FhmozSkQKBgQDWtxBz2NdH121CS/xU\nM/JLT7Dp4ynxy2WfF79QrTjK0J6S2mFxy5u1Z0hTLC3EnvYoM/JTE3+Eja7jqSc8\nAwrn1M4sbVmSU9ntlmaG0oSV7CnDJ4LYqHbMJBFwUsGWYIRkN9zI7eJzdWlFTjqM\nAyzwFY0loHHctaG8GGias656ZwKBgQDIM0cz90DFCF7wZ4wwmh04yFXHEiMyW5W9\nZlrF9noQj/4LpzjgkbWwE6vcUUlgObSmJEpREz957Nl2FnExObSqbM7C2mCJtIsE\n2nhAqtRHv4cESMr1iT38VSIb7gerR+qUDfjZF03RgnaOp+WoA0UYqNYmEyZslHXt\n2Oid+wwffwKBgQCFhfQqRpeh6nrcdoplBqTPZrBa0lR8NANvCwKDNiWSImfqZPmi\nHX8oMSFN77RKiJwFZkB0nzR2hvFSTBfE/xNiFflcsWe5UoG8eQIrJ3EiFmnmHYUG\nHMU7r9ZUZnJShJTwCbk4Do77Q/GCEuLfvP3OE2jiFEOagC0i3n72bXS8UwKBgQCx\n7+mkRWl69mKzl8UhWYkJc/3Rbsx7sK0ZZwTdGKILYH/yyZEjAD8VHZbNvi3Saden\nJ3AqOUpcyufJLk8y6lAqfYUT6NaO7jn1eVwSVgNRNekCJNTHgVDnmp8zZc/JK6VS\nLEz2XuEairNnPdFAEI/0R/P2aWTocteSLA0shPqUbwKBgChpFMKnyNeYmyvKFEPb\ntPEbj77m43yJql1G8GejJIFbJ7Oma6r0c4YxMfHZEz30jvdAhKY5/4lNT9v7mBn+\n9Bnj6cNDxy6ncld/F5l1dQPDc3aYrJshVeJRrcwt7TiEPK5PTDqNlulCpC2v3nP5\nLWY6pg5kK3ZiHB7jaq7/kuX9\n-----END PRIVATE KEY-----\n",
+  "client_email": "neurosketch-storage@neurosketch.iam.gserviceaccount.com",
+  "client_id": "100278734565940090870",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/neurosketch-storage%40neurosketch.iam.gserviceaccount.com"
+}
