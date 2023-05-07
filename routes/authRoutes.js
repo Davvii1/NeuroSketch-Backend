@@ -169,8 +169,18 @@ router.post("/uploadImage", authenticateToken, async (req, res) => {
   async function streamFileUpload() {
     passthroughStream
       .pipe(file.createWriteStream())
-      .on("finish", () => {
+      .on("finish", async () => {
         bucket.file(`${filename}`).makePublic();
+        const url = `https://storage.googleapis.com/neurosketch/${filename}`;
+        const user = await User.findOne({ email: req.user.user });
+        const imageToPush = {
+          id: req.body.id,
+          url: url,
+        };
+        user.images.push(imageToPush);
+        user.save();
+
+        return res.send({ url: url, message: "Image saved successfully" });
       })
       .on("error", function (err) {
         return res.status(401).send({ message: err });
@@ -180,16 +190,6 @@ router.post("/uploadImage", authenticateToken, async (req, res) => {
   await streamFileUpload().catch(function (err) {
     return res.status(401).send({ message: err });
   });
-  const url = `https://storage.googleapis.com/neurosketch/${filename}`;
-  const user = await User.findOne({ email: req.user.user });
-  const imageToPush = {
-    id: req.body.id,
-    url: url,
-  };
-  user.images.push(imageToPush);
-  user.save();
-
-  return res.send({ url: url, message: "Image saved successfully" });
 });
 
 export default router;
