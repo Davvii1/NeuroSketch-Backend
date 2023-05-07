@@ -170,7 +170,7 @@ router.post("/uploadImage", authenticateToken, async (req, res) => {
     passthroughStream
       .pipe(file.createWriteStream())
       .on("finish", async () => {
-        bucket.file(`${filename}`).makePublic();
+        await bucket.file(`${filename}`).makePublic();
         const url = `https://storage.googleapis.com/neurosketch/${filename}`;
         const user = await User.findOne({ email: req.user.user });
         const imageToPush = {
