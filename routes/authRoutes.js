@@ -158,24 +158,34 @@ router.post("/uploadImage", authenticateToken, async (req, res) => {
 
   const filename = `${Date.now()}-${req.user.user}.jpg`;
   const file = bucket.file(`${filename}`);
+  file.on("error", function (err) {
+    return res.status(401).send({ message: err });
+  });
 
   const passthroughStream = new stream.PassThrough();
   passthroughStream.write(buffer);
   passthroughStream.end();
 
   async function streamFileUpload() {
-    passthroughStream.pipe(file.createWriteStream()).on("finish", () => {
-      bucket.file(`${filename}`).makePublic();
-    });
+    passthroughStream
+      .pipe(file.createWriteStream())
+      .on("finish", () => {
+        bucket.file(`${filename}`).makePublic();
+      })
+      .on("error", function (err) {
+        return res.status(401).send({ message: err });
+      });
   }
 
-  await streamFileUpload().catch(console.error);
+  await streamFileUpload().catch(function (err) {
+    return res.status(401).send({ message: err });
+  });
   const url = `https://storage.googleapis.com/neurosketch/${filename}`;
   const user = await User.findOne({ email: req.user.user });
   const imageToPush = {
     id: req.body.id,
-    url: url
-  }
+    url: url,
+  };
   user.images.push(imageToPush);
   user.save();
 
