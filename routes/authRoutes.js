@@ -33,9 +33,9 @@ router.post("/token", async (req, res) => {
   try {
     if (req.body.refreshToken == null)
       return res.status(401).send({ message: "Not valid token" });
-    const user = await User.findOne({ refreshToken: req.body.refreshToken }).select(
-      "+refreshToken"
-    );
+    const user = await User.findOne({
+      refreshToken: req.body.refreshToken,
+    }).select("+refreshToken");
     if (!user) return res.status(401).send({ message: "Not user found" });
     const authtoken = user.generateAuthToken(user);
     const refreshToken = user.generateRefreshToken(user);
@@ -80,9 +80,9 @@ router.post("/login", async (req, res) => {
     });
     if (error)
       return res.status(400).send({ message: error.details[0].message });
-    const user = await User.findOne({ email: req.body.email }).select(
-      "+password", "+refreshToken"
-    );
+    const user = await User.findOne({ email: req.body.email })
+      .select("+password")
+      .select("+refreshToken");
     if (!user)
       return res.status(401).send({ message: "Invalid email or password" });
 
