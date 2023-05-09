@@ -81,7 +81,7 @@ router.post("/login", async (req, res) => {
     if (error)
       return res.status(400).send({ message: error.details[0].message });
     const user = await User.findOne({ email: req.body.email }).select(
-      "+password"
+      "+password", "+refreshToken"
     );
     if (!user)
       return res.status(401).send({ message: "Invalid email or password" });
