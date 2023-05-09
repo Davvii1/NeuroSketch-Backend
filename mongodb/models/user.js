@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, select: false, required: true },
   images: [{ type: { id: String, url: String }, required: false }],
-  refreshToken: { type: String, select: false, required: false },
+  refreshToken: [{ type: String, select: false, required: false }],
 });
 
 userSchema.methods.generateAuthToken = function (user) {

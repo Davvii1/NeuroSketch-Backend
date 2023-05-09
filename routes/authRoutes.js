@@ -37,7 +37,8 @@ router.post("/token", async (req, res) => {
     if (!user) return res.status(401).send({ message: "Not user found" });
     const authtoken = user.generateAuthToken(user);
     const refreshToken = user.generateRefreshToken(user);
-    user.refreshToken = refreshToken;
+    const index = user.refreshToken.indexOf(req.body.refreshToken);
+    user.refreshToken[index] = refreshToken;
     user.save();
     return res
       .status(200)
@@ -92,7 +93,7 @@ router.post("/login", async (req, res) => {
 
     const authtoken = user.generateAuthToken(user);
     const refreshToken = user.generateRefreshToken(user);
-    user.refreshToken = refreshToken;
+    user.refreshToken.push(refreshToken);
     user.save();
     res.status(200).send({
       authToken: authtoken,
@@ -106,7 +107,7 @@ router.post("/login", async (req, res) => {
 
 router.delete("/logout", async (req, res) => {
   const user = await User.findOne({ refreshToken: req.body.refreshToken });
-  user.refreshToken = "";
+  user.refreshToken.pop(req.body.refreshToken);
   user.save();
   return res.status(204).send({ message: "Successfully logout" });
 });
